@@ -6,45 +6,20 @@
  * @flow strict-local
  */
 
-import React, { useEffect } from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+ import React, { useEffect, useState } from 'react';
+ import { Provider } from 'react-redux';
+ import Home from './screens/Home';
+ import { store } from './redux/store/store'
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-import { getPhotoes } from './services/ApiInterface';
-
-import * as CONSTANTS from './constants/Constant';
+ 
 
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-
-
-     
-    </SafeAreaView>
+    <Provider store={store}>
+        <Home/>
+    </Provider>
   );
 };
 
