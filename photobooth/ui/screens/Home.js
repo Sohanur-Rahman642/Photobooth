@@ -16,8 +16,8 @@ import {
 } from 'react-native';
 
 import { connect } from 'react-redux';
-import { getImagesTask } from '../redux/actions/actions';
-//import ImageCard from './components/ImageCard';
+import { getImagesTask } from '../../redux/actions/actions';
+import ImageCard from '../components/ImageCard';
 
 
 
@@ -51,20 +51,15 @@ const Home = ({ imageModel, dispatch }) => {
 
 
    console.log('imageModel.error ', imageModel.error)
-
-  
-
-  console.log('imageModel ', imageModel)
+   console.log('imageModel ', imageModel)
 
   const fetchMoreImages = () => {
-        console.log("page in fetchMoreImages ", page)
         if(!imageModel.isListEnd && !imageModel.moreToLoad){
           setPage(page => page + 1)
         }
   }
 
   const fetchAgain = () => {
-      console.log("kjasjsksn")
       setPage(1)
 }
 
@@ -118,11 +113,11 @@ const Home = ({ imageModel, dispatch }) => {
                     keyExtractor={(item, index) => index}
                     onEndReached={fetchMoreImages}
                     onEndReachedThreshold={0.2}
-                    // renderItem={({item}) => (
-                    //   (props.id = item.id),
-                    //   (props.url = item.downloadUrl),
-                    //      <ImageCard {...props}/>
-                    // )}
+                    renderItem={({item}) => (
+                      (props.id = item.id),
+                      (props.url = item.downloadUrl),
+                         <ImageCard {...props}/>
+                    )}
                     ListFooterComponent={renderFooter}
                     //ListEmptyComponent={renderEmpty}
                   /> 

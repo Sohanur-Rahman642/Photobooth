@@ -8,7 +8,7 @@
 
  import React, { useEffect, useState } from 'react';
  import { Provider } from 'react-redux';
- import Home from './screens/Home';
+ import Home from './ui/screens/Home';
  import { store } from './redux/store/store'
 
  
