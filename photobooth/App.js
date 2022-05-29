@@ -37,16 +37,6 @@ const App = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-useEffect(() => {
-    getPhotoes(CONSTANTS.UNSPLASH_ACCESS_KEY, 1)
-    .then(items => {
-      console.log("items ", items)
-    })
-    .catch(error => console.log("error"))
-
-    
-},[])
-
 
   return (
     <SafeAreaView style={backgroundStyle}>
