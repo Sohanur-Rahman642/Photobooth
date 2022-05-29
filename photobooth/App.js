@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -25,6 +25,9 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import { getPhotoes } from './services/ApiInterface';
+
+import * as CONSTANTS from './constants/Constant';
 
 
 const App = () => {
@@ -33,6 +36,17 @@ const App = () => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+
+useEffect(() => {
+    getPhotoes(CONSTANTS.UNSPLASH_ACCESS_KEY, 1)
+    .then(items => {
+      console.log("items ", items)
+    })
+    .catch(error => console.log("error"))
+
+    
+},[])
+
 
   return (
     <SafeAreaView style={backgroundStyle}>
