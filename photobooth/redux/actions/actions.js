@@ -19,14 +19,22 @@ export const getImagesTask = (params) => (dispatch) =>{
     })
 
     try{
-        getPhotoes(UNSPLASH_ACCESS_KEY, payload.page)
+        getPhotoes(UNSPLASH_ACCESS_KEY, params.page)
         .then(
             items => {
-                //console.log("items ", items)
                 if(items.length > 0){
+                    let arr = [];
+                    items.map(item => {
+                        arr.push({
+                            id: item.id,
+                            imgUrl: item.urls.regular,
+                            downloadUrl: item.links.download,
+                        })
+                    })
+
                     dispatch({
                      type: API_SUCCESS,
-                     data: items
+                     data: arr
                     })
                 }else{
                  dispatch({
@@ -34,14 +42,21 @@ export const getImagesTask = (params) => (dispatch) =>{
                     })
                 }
             }
+        )
+        .catch(
+            error => {
+                dispatch({
+                    type: API_FAILURE,
+                    error: error.message
+                   })
+            }
         );
  
      
      }catch(error){
-         console.log("error ", error)
          dispatch({
              type: API_FAILURE,
-             error: error.message
+             error: error
             })
      }
 } 
