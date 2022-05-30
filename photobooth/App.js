@@ -8,8 +8,8 @@
 
  import React, { useEffect, useState } from 'react';
  import { Provider } from 'react-redux';
- import Home from './ui/screens/Home';
  import { store } from './redux/store/store'
+ import Navigator from './navigation/Navigator'
 
  
 
@@ -18,7 +18,7 @@ const App = () => {
 
   return (
     <Provider store={store}>
-        <Home/>
+         <Navigator/>
     </Provider>
   );
 };
