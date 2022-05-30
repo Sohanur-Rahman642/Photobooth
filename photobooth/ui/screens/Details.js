@@ -61,6 +61,12 @@ return (
                     }}
                     resizeMode={FastImage.resizeMode.cover}
                 />   
+
+                {/* <Image 
+                    style={{height: 400, width: 400}}
+                    source={{uri: url ? url : imageNotFoundUri}}
+                    transition={false} 
+                /> */}
             </View>
 
         }
