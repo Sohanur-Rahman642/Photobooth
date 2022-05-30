@@ -31,10 +31,18 @@
     "babel-jest": "^28.1.0",
     "eslint": "^8.16.0",
     "jest": "^28.1.0",
+    "jest-fetch-mock": "^3.0.3",
     "metro-react-native-babel-preset": "^0.71.0",
     "react-test-renderer": "17.0.2"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?@?react-native|@react-native-community|react-native-gesture-handler|@react-navigation(.*))"
+     ],
+    "automock": false,
+    "setupFiles": [
+      "./setupJest.js"
+    ]
   }
 }

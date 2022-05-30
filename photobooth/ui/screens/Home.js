@@ -120,6 +120,7 @@ const Home = ({ imageModel, dispatch }) => {
                     )}
                     ListFooterComponent={renderFooter}
                     //ListEmptyComponent={renderEmpty}
+            
                   /> 
                   
                   } 
