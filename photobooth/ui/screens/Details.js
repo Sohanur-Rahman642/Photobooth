@@ -14,6 +14,11 @@ import {
   Button
 } from 'react-native';
 
+import FastImage from 'react-native-fast-image'
+
+import imageNotFound from '../../asset/image_error.jpeg'
+const imageNotFoundUri =   Image.resolveAssetSource(imageNotFound).uri
+
 
 const Details = (props) => {
 
@@ -48,10 +53,14 @@ return (
             renderLoading()
             :
             <View style={{flex:1, alignItems:'center', justifyContent:'center', padding: 10, backgroundColor:'#000'}}>
-                <Image style={{height: 400, width: 400}} 
-                    source={{uri: url}}
-                    onLoadEnd={_onLoadEnd}
-                    />
+                <FastImage
+                    style={{height: 400, width: 400}}
+                    source={{
+                        uri: url ? url : imageNotFoundUri,
+                        priority: FastImage.priority.normal,
+                    }}
+                    resizeMode={FastImage.resizeMode.cover}
+                />   
             </View>
 
         }

@@ -18,6 +18,7 @@ import {
 import imageNotFound from '../../asset/image_error.jpeg'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
+import FastImage from 'react-native-fast-image'
 
 const imageNotFoundUri =   Image.resolveAssetSource(imageNotFound).uri
 
@@ -38,11 +39,20 @@ const ImageCard = (props) => {
 
     return(
         <TouchableOpacity style={{padding: 2,}} onPress={ () => _onClickItem(url)}> 
-                <Image style={{height: 180, width: 180, backgroundColor:'#e8f3f7'}} 
+                {/* <Image style={{height: 180, width: 180, backgroundColor:'#e8f3f7'}} 
                     source={{uri: url ? url : imageNotFoundUri}}
                     transition={false}
                     
-                    />
+                    /> */}
+
+             <FastImage
+                    style={{height: 180, width: 180, backgroundColor:'#e8f3f7'}}
+                    source={{
+                        uri: url ? url : imageNotFoundUri,
+                        priority: FastImage.priority.normal,
+                    }}
+                    resizeMode={FastImage.resizeMode.cover}
+                />   
         </TouchableOpacity>
     )
 }

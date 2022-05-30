@@ -6,11 +6,7 @@ const initialState = {
     moreToLoad: false,
     error: null,
     moreError: null,
-    data: [{
-        id: '',
-        imgUrl: '',
-        downloadUrl: '',
-    }],
+    data: [],
     isListEnd: false,
 }
 
