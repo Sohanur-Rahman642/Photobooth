@@ -18,20 +18,20 @@ export async function getPhotoes(apiAccessKey, page) {
   }
 
 
-  export async function getPhotoesTest(apiAccessKey, page) {
-    const encodedApiAccessKey = encodeURIComponent(apiAccessKey)
-    const encodedPage = encodeURIComponent(page)
+  // export async function getPhotoesTest(apiAccessKey, page) {
+  //   const encodedApiAccessKey = encodeURIComponent(apiAccessKey)
+  //   const encodedPage = encodeURIComponent(page)
     
-    return fetch(CONSTANTS.BASE_URL + `photos/?client_id=${encodedApiAccessKey}&page=${encodedPage}`)
-    .then( data => data.json())
-    .then( res => {
-      if(Array.isArray(res) && res.length === 0){
-        throw new Error('Nothing found from the server')
-      }
-      return res;
-    })
-    .catch(error => {
-      console.log(error)
-      throw new Error('Network request failed')
-    });
-  }
+  //   return fetch(CONSTANTS.BASE_URL + `photos/?client_id=${encodedApiAccessKey}&page=${encodedPage}`)
+  //   .then( data => data.json())
+  //   .then( res => {
+  //     if(Array.isArray(res) && res.length === 0){
+  //       throw new Error('Nothing found from the server')
+  //     }
+  //     return res;
+  //   })
+  //   .catch(error => {
+  //     console.log(error)
+  //     throw new Error('Network request failed')
+  //   });
+  // }

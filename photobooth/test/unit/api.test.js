@@ -91,20 +91,20 @@ beforeEach(() => {
 
 
 
-  test('throw errors if empty array', async () => {
-    fetch.mockResponseOnce(JSON.stringify([]));
+//   test('throw errors if empty array', async () => {
+//     fetch.mockResponseOnce(JSON.stringify([]));
 
-    const onResponse = jest.fn();
-    const onError = jest.fn();
+//     const onResponse = jest.fn();
+//     const onError = jest.fn();
 
-    return getPhotoesTest(expect.anything(), expect.anything())
-        .then(onResponse)
-        .catch(onError)
-        .finally(() => {
-            expect(onResponse).not.toHaveBeenCalled();
-            expect(onError).toHaveBeenCalled();
-    });
-  });
+//     return getPhotoesTest(expect.anything(), expect.anything())
+//         .then(onResponse)
+//         .catch(onError)
+//         .finally(() => {
+//             expect(onResponse).not.toHaveBeenCalled();
+//             expect(onError).toHaveBeenCalled();
+//     });
+//   });
 
 
 
