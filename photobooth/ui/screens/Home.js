@@ -50,8 +50,8 @@ const Home = ({ imageModel, dispatch }) => {
    },[page, imageModel.error]) 
 
 
-   console.log('imageModel.error ', imageModel.error)
-   console.log('imageModel ', imageModel)
+  //  console.log('imageModel.error ', imageModel.error)
+  //  console.log('imageModel ', imageModel)
 
   const fetchMoreImages = () => {
         if(!imageModel.isListEnd && !imageModel.moreToLoad){
@@ -120,7 +120,6 @@ const Home = ({ imageModel, dispatch }) => {
                     )}
                     ListFooterComponent={renderFooter}
                     //ListEmptyComponent={renderEmpty}
-            
                   /> 
                   
                   } 
