@@ -1,10 +1,10 @@
 # Photobooth
 ##### It's a cross platform react native photo gallery app that uses Unsplash api to store &amp; show images.
 ##### App UI Screens
-<img src="images/ios_home.png" width="200"> &emsp; &emsp;  &emsp; &emsp;  &emsp; &emsp; <img src="images/ios_details.png" width="200"> &emsp; &emsp;  &emsp; &emsp;  &emsp; &emsp; <img src="images/android_home.png" width="200"> 
+<img src="images/ios_home.png" width="200"> &emsp; &emsp; <img src="images/ios_details.png" width="200"> &emsp; &emsp; <img src="images/android_home.png" width="200"> 
 <br >
 <br >
-<img src="images/android_details.png" width="200"> &emsp; &emsp;  &emsp; &emsp;  &emsp; &emsp; <img src="images/ios_no_network.png" width="200"> &emsp; &emsp;  &emsp; &emsp;  &emsp; &emsp; <img src="images/android_no_network.png" width="200">
+<img src="images/android_details.png" width="200"> &emsp; &emsp;  <img src="images/ios_no_network.png" width="200"> &emsp; &emsp; <img src="images/android_no_network.png" width="200">
 
 <br >
 <br >
