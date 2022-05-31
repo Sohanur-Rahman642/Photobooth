@@ -16,6 +16,9 @@
 - React native 
 - Javascript fetch
 - Redux
+- Redux thunk
+- React native first image 
 - Jest
+- Jest fetch mock 
 
 #### Note: Additionally I handled some extra tasks such as network accessibility check & render proper UI state based on it, Api unit testing & response handling.
